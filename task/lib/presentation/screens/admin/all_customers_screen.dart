@@ -16,7 +16,7 @@ class AllCustomersScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Appcolors.day,
       appBar: AppBar(
-        backgroundColor: Appcolors.classic,
+        backgroundColor: Appcolors.spice,
         leading: IconButton(
           onPressed: (){
             Navigator.pushReplacementNamed(context, AppRoutes.login);
@@ -31,15 +31,16 @@ class AllCustomersScreen extends StatelessWidget {
           }
           final docs = snap.data?.docs ?? [];
           if (docs.isEmpty) return const Center(child: Text('No customers found'));
-          return ListView.separated(
+          return ListView.builder(
             itemCount: docs.length,
-            separatorBuilder: (_, __) => const Divider(height: 1),
             itemBuilder: (_, i) {
               final data = docs[i].data();
               final name = (data['name'] as String?)?.trim();
               final email = (data['email'] as String?)?.trim() ?? '';
               return Card(
+                elevation: 4,
                 child: ListTile(
+                  tileColor: Appcolors.day,
                   title: Text(name?.isNotEmpty == true ? name! : email),
                   subtitle: Text(email),
                 ));
@@ -47,6 +48,15 @@ class AllCustomersScreen extends StatelessWidget {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.pushNamed(context, AppRoutes.adminProfile);
+        },
+        backgroundColor: Appcolors.night,
+        foregroundColor: Appcolors.day,
+        child: Icon(IconlyBold.profile),
+        ),
+        
     );
   }
 }

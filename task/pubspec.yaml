@@ -33,6 +33,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
+  flutter_launcher_icons: ^0.14.4
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. 
@@ -52,9 +54,18 @@ flutter:
   assets:
      - assets/logo.jpeg
      - assets/bg.jpeg
-
+     - assets/carousel/c1.jpeg
+     - assets/carousel/c2.jpeg
+     - assets/carousel/c3.jpeg
+     - assets/menu/biriyani.jpeg
+     - assets/menu/meals.jpeg
+     - assets/menu/noodles.jpeg
+     
   fonts:
      - family: Verdana
        fonts:
           - asset: assets/fonts/VERDANA.TTF
 
+flutter_icons:
+  android: true
+  image_path: "assets/logo.jpeg"

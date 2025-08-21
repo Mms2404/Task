@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:task/core/constants/appColors.dart';
-import 'package:task/core/routes/appRoutes.dart';
 import 'package:task/presentation/screens/customers/menu_screen.dart';
 import 'package:task/presentation/screens/customers/orders_screen.dart';
 import 'package:task/presentation/screens/customers/profile_screen.dart';
@@ -25,14 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Appcolors.classic,
-        leading: IconButton(
-          onPressed: (){
-            Navigator.pushReplacementNamed(context, AppRoutes.login);
-          }, 
-          icon: Icon(IconlyLight.arrow_left)),
-      ),
       body: screens[currentScreen],
       bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.vertical(

@@ -43,7 +43,7 @@ class AuthRepositoryImpl implements AuthRepository {
     final doc = {
       'uid': cred.user!.uid,
       'email': email,
-      'displayName': displayName,
+      'name': displayName,
       'role': 'customer',
     };
     await _db.collection('users').doc(cred.user!.uid).set(doc, SetOptions(merge: true));
