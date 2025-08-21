@@ -44,7 +44,7 @@ lib/
 
 # SETUP
 ```
-git clone
+git clone https://github.com/Mms2404/Task.git
 cd task
 flutter pub get
 ```
